@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 20160212224645) do
   add_index "events", ["restaurant_id"], name: "index_events_on_restaurant_id"
   add_index "events", ["user_id"], name: "index_events_on_user_id"
 
+  create_table "events_users", force: :cascade do |t|
+    t.integer  "event_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "events_users", ["event_id"], name: "index_events_users_on_event_id"
+  add_index "events_users", ["user_id"], name: "index_events_users_on_user_id"
+
   create_table "restaurants", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
