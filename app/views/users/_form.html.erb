@@ -10,20 +10,28 @@
       </ul>
     </div>
   <% end %>
+  <div class="row">
+    <div class="col s12 m4 offset-m4">
+      <h5>Sign up with Food Buddy</h5>
 
-  <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
+      <div class="field">
+        <%= f.label :username %><br>
+        <%= f.text_field :username %>
+      </div>
+      <div class="field">
+        <%= f.label :password %><br>
+        <%= f.text_field :password %>
+      </div>
+      <div class="field">
+        <%= f.label :email %><br>
+        <%= f.text_field :email %>
+      </div>
+      <div class="actions">
+        <%= f.submit 'Sign Up', class:'btn waves-effect waves-light' %>
+      </div>      
+    </div>
+
   </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Submit', :class => 'btn waves-effect- waves-light' %>
-  </div>
+
+
 <% end %>

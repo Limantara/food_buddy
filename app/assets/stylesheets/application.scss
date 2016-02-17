@@ -39,5 +39,12 @@
 @import "materialize/components/date_picker/default.date.scss";
 @import "materialize/components/date_picker/default.time.scss";
 
-// Extras
+//Extra
 @import "materialize/extras/nouislider";
+
+#logo {
+  margin-left: 20px;
+  letter-spacing: -1px;
+  float: left;
+}
+

@@ -1,0 +1,22 @@
+<nav>
+  <div class="nav-wrapper teal lighten-2">
+    <%= link_to 'Food Buddy', root_path, class: "brand-logo ", id: "logo" %>
+    
+
+    
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><%= link_to 'Sign up', new_user_path %></li>
+      <li><a href="#">Log in</a></li>
+    </ul>
+    
+    <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      
+  </div>
+
+</nav>
+
