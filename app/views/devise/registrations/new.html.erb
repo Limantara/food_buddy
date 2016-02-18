@@ -1,5 +1,8 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<div class="red-text text-darken-2">
+<!--    <%= devise_error_messages! %>-->
+</div>
+  
 
   <div class="row">
     <div class="col s12 m4 offset-m4">
@@ -9,6 +12,9 @@
       <div class="field">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true %>
+        <div class="red-text text-darken-2">
+        	<%= errors_for @user, :email %>
+        </div>
       </div>
 
       <div class="field">
@@ -17,11 +23,18 @@
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "off" %>
+        <div class="red-text text-darken-2">
+        	<%= errors_for @user, :password %>
+        </div>
+
       </div>
 
       <div class="field">
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <div class="red-text text-darken-2">
+        	<%= errors_for @user, :password_confirmation %>
+        </div>
       </div>
 
       <div class="actions">
