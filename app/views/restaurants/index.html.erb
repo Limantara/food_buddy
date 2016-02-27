@@ -1,29 +1,72 @@
-<p id="notice"><%= notice %></p>
+<div class="row search-row">
+  <%= form_tag("/restaurants", method: "get") do %>
+    <div class="col s12 m4 offset-m1">
+      <nav>
+        <div class="nav-wrapper teal lighten-2">
+          <div class="input-field">
+            <%= search_field_tag 'search', nil, :placeholder => 'restaurants, tea, sandwiches' %>
+            <%= label_tag(:search, 'Find') %>
+            <i class="material-icons">close</i>
+          </div>
+        </div>
+      </nav>
+    </div>
+  
+    <div class="col s12 m4">
+      <nav>
+        <div class="nav-wrapper teal lighten-2">
+          <div class="input-field">
+            <%= search_field_tag 'location', nil, :placeholder => 'San Jose, CA' %>
+            <%= label_tag(:location, 'Near') %>
+            <i class="material-icons">close</i>
+          </div>
+        </div>
+      </nav>
+    </div>
+  
+    <div class="col s12 m1">
+        <%= submit_tag('Search', class: 'btn btn-lg teal lighten-2 waves-effect waves-light') %> 
+    </div>
+  
+  
+  <% end %>
+</div>
 
-<h1>Listing Restaurants</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td><%= restaurant.name %></td>
-        <td><%= restaurant.address %></td>
-        <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Restaurant', new_restaurant_path %>
+<ul>
+  <% @businesses.each do |business| %>
+  <li>
+    <div class="row">
+      <div class="col s12 m4 offset-m4">
+        <div class="card medium">
+    
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="<%= (business.image_url).sub('/ms', '/348s') %>">
+          </div>
+          
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">
+              <%= business.name %> 
+              <i class="material-icons right">more_vert</i>
+            </span>
+      
+            <div class="rating-image">
+              <img src="<%= business.rating_img_url %>">
+              <p class="rating-view"><%= business.review_count %> reviews</p>
+            </div> 
+            <p><a href="#">This is a link</a></p>
+          </div>
+          
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">
+              <%= business.name %>
+              <i class="material-icons right">close</i>
+            </span>
+            <p><%= business.location.address[0] %><br>
+            <%= business.location.city %>, <%= business.location.state_code %> <%= business.location.postal_code %></p>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </li>
+  <% end %>
+</ul>

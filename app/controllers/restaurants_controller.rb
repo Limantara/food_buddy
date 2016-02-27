@@ -5,6 +5,14 @@ class RestaurantsController < ApplicationController
   # GET /restaurants.json
   def index
     @restaurants = Restaurant.all
+    location = params[:location]
+    search = params[:search]
+    @businesses = []
+    if !location.nil? and !search.nil?
+      response = Yelp.client.search(location, { term: search})
+      @businesses = response.businesses
+    end
+    
   end
 
   # GET /restaurants/1

@@ -1,83 +1,8 @@
 
 <%= render 'pages/banner' %>
 
-<%= form_tag root_path, method: :get do %>
 
-<div class="row">
-  <div class="col s12 m4 offset-m2">
-<nav>
-    <div class="nav-wrapper">
-      <form>
-        <div class="input-field">
-          <input id="search" type="search" placeholder="italian, steaks, tacos, dinners" required>
-          <label style="font-weight: normal; color: #000000; font-size: 17px;">Find</i></label>
-          <i class="material-icons">close</i>
-        </div>
-      </form>
-    </div>
-</nav>
-  </div>
-  
-<div class="col s12 m4">
-  <nav>
-    <div class="nav-wrapper">
-      <form>
-        <div class="input-field">
-          <input id="search" type="search" placeholder="San Jose, CA" required>
-          <label style="font-weight: normal; color: #000000; font-size: 17px;">Near</i></label>
-          <i class="material-icons">close</i>
-        </div>
-      </form>
-    </div>
-  </nav>
-</div>
 
-<div class="col s12 m1">
-    <i class="material-icons">search</i>
-</div>
 
-<% end %>
-
-    
-</div>
-
-<ul>
-  <% @businesses.each do |business| %>
-  <li>
-    <div class="row">
-      <div class="col s12 m4 offset-m4">
-        <div class="card medium">
-    
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="<%= (business.image_url).sub('/ms', '/348s') %>">
-          </div>
-          
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">
-              <%= business.name %> 
-              <i class="material-icons right">more_vert</i>
-            </span>
-      
-            <div class="rating-image">
-              <img src="<%= business.rating_img_url %>">
-              <p class="rating-view"><%= business.review_count %> reviews</p>
-            </div> 
-            <p><a href="#">This is a link</a></p>
-          </div>
-          
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">
-              <%= business.name %>
-              <i class="material-icons right">close</i>
-            </span>
-            <p><%= business.location.address[0] %><br>
-            <%= business.location.city %>, <%= business.location.state_code %> <%= business.location.postal_code %></p>
-          </div>
-        </div>
-      </div>  
-    </div>
-  </li>
-  <% end %>
-</ul>
 
 
