@@ -3,7 +3,7 @@ class CreateEvents < ActiveRecord::Migration
     create_table :events do |t|
       t.references :user, index: true, foreign_key: true
       t.references :restaurant, index: true, foreign_key: true
-      t.string :message
+      t.text :message
 
       t.timestamps null: false
     end

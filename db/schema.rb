@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218041209) do
+ActiveRecord::Schema.define(version: 20160301231639) do
 
   create_table "events", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "restaurant_id"
-    t.string   "message"
+    t.text     "message"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

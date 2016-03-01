@@ -3,9 +3,9 @@
 one:
   user_id: 
   restaurant_id: 
-  message: MyString
+  message: MyText
 
 two:
   user_id: 
   restaurant_id: 
-  message: MyString
+  message: MyText
