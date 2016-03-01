@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
   def home  
-  	redirect_to restaurants_url if user_signed_in?
+  	redirect_to dashboard_url if user_signed_in?
+  end
+
+  def dashboard
   end
 end
