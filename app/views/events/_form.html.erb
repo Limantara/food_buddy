@@ -11,19 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :restaurant_id %><br>
-    <%= f.text_field :restaurant_id %>
-  </div>
-  <div class="field">
-    <%= f.label :message %><br>
-    <%= f.text_area :message %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="row">
+    <div class="col s12 m12 l8 offset-m4 offset-l2">
+      <h1>Host Event</h1>
+      <div class="field">
+        <%= f.label :restaurant_id %><br>
+        <%= f.text_field :restaurant_id %>
+      </div>
+      <div class="field">
+        <%= f.label :message %><br>
+        <%= f.text_area :message, class: 'materialize-textarea' %>
+      </div>
+      <div class="actions">
+        <%= f.submit 'Host Event', class:'btn waves-effect waves-light' %>
+      </div>
+    </div>
   </div>
 <% end %>
