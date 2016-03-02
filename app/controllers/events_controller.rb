@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   # GET /events
@@ -29,6 +30,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user_id = current_user.id
     @event.restaurant_id = @restaurant.id
+    @event.time = params[:event][:time]
 
     respond_to do |format|
       if @event.save
