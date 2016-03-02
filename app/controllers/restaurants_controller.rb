@@ -11,6 +11,7 @@ class RestaurantsController < ApplicationController
     if !location.nil? and !search.nil?
       response = Yelp.client.search(location, { term: search})
       @businesses = response.businesses
+      save_restaurants()
     end
     
   end
@@ -78,5 +79,14 @@ class RestaurantsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
       params.require(:restaurant).permit(:name, :address)
+    end
+
+    def save_restaurants
+      @businesses.each do |business| 
+        address = "#{business.location.address[0]} <br> " +
+                  "#{business.location.city}, #{business.location.state_code} #{business.location.postal_code }"
+
+        Restaurant.create(:name => business.name, :address => address)
+      end
     end
 end
