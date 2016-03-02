@@ -15,6 +15,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @restaurant = Restaurant.find_by :yelp_id => params[:restaurant]
   end
 
   # GET /events/1/edit
@@ -24,11 +25,13 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
+    @restaurant = Restaurant.find_by :yelp_id => params[:event][:restaurant]
     @event = Event.new(event_params)
+    @event.user_id = current_user.id
+    @event.restaurant_id = @restaurant.id
 
     respond_to do |format|
       if @event.save
-        # format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.html { redirect_to dashboard_url }
         format.json { render :show, status: :created, location: @event }
       else

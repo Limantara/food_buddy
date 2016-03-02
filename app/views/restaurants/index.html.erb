@@ -48,7 +48,7 @@
               <img src="<%= business.rating_img_url %>">
               <p class="rating-view"><%= business.review_count %> reviews</p>
             </div> 
-            <p><%= link_to 'Host Event', new_event_path %></p>
+            <p><%= link_to 'Host Event', :controller => "events", :action => "new", :restaurant => business.id %></p>
           </div>
           
           <div class="card-reveal">

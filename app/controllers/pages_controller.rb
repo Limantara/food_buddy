@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+  	redirect_to root_url unless user_signed_in?
   	@events = Event.all
   end
 end
