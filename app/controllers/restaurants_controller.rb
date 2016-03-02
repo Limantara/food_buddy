@@ -86,7 +86,9 @@ class RestaurantsController < ApplicationController
         address = "#{business.location.address[0]} <br> " +
                   "#{business.location.city}, #{business.location.state_code} #{business.location.postal_code }"
 
-        Restaurant.create(:name => business.name, :address => address)
+        Restaurant.create(:name => business.name, :address => address, :yelp_id => business.id,
+                          :image_url => business.image_url, :review_count => business.review_count,
+                          :rating_img_url => business.rating_img_url)
       end
     end
 end
