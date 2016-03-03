@@ -42,14 +42,58 @@
 //Extra
 @import "materialize/extras/nouislider";
 
+html {
+  background-color: #fff;
+  color: #555;
+  font-family: 'Lato', 'Arial', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;  
+}
+
+p {
+  font-size: 80%;
+}
+ 
+::-webkit-input-placeholder {
+  font-size: 80%;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 200%;
+  font-weight: 300;
+  letter-spacing: 1px;
+  
+}
+
+#hero-text-box {
+  position: absolute;
+  width: 1140px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+.nav-wrapper li a {
+  font-size: 85%;
+}
+
 #logo {
   margin-left: 20px;
   letter-spacing: -1px;
   float: left;
 }
 
-.rating-image {
-  
+.hero-header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    asset-url("hero.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin-top: -20px;
 }
 
 .rating-view {
@@ -60,3 +104,4 @@
 .search-row {
   margin-top: 100px;
 }
+

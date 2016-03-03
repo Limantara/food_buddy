@@ -1,24 +1,31 @@
 <nav>
   <div class="nav-wrapper teal lighten-2">
     <%= link_to 'Food Buddy', root_path, class: "brand-logo ", id: "logo" %>
-    
+    <a href="#" data-activates="nav-mobile" class="button-collapse">
+                              <i class="material-icons">menu</i></a>
 
-    
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
+   
+    <ul class="right hide-on-med-and-down">
+      <li><a href="#">ABOUT</a></li>
+      <li><a href="#">CONTACT</a></li>
       <% if user_signed_in? %>
-        <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+        <li><%= link_to 'SIGN OUT', destroy_user_session_path, :method => :delete %></li>
       <% else %>
-        <li><%= link_to 'Sign up', new_user_registration_path %></li>
-        <li><%= link_to 'Log in', new_user_session_path %></li>
+        <li><%= link_to 'SIGN UP', new_user_registration_path %></li>
+        <li><%= link_to 'LOG IN', new_user_session_path %></li>
       <% end %>
     </ul>
     
-    <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="side-nav" id="mobile-demo">
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">CONTACT</a></li>
+        <% if user_signed_in? %>
+          <li><%= link_to 'SIGN OUT', destroy_user_session_path, :method => :delete %></li>
+        <% else %>
+        <li><%= link_to 'SIGN UP', new_user_registration_path %></li>
+        <li><%= link_to 'LOG IN', new_user_session_path %></li>
+      <% end %>
+    </ul>
       
   </div>
 
