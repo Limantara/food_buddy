@@ -5,7 +5,6 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @restaurants = Restaurant.all
     location = params[:location]
     search = params[:search]
     @businesses = []
@@ -14,7 +13,6 @@ class RestaurantsController < ApplicationController
       @businesses = response.businesses
       save_restaurants()
     end
-    
   end
 
   # GET /restaurants/1
