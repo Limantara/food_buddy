@@ -2,42 +2,54 @@
 <div class="red-text text-darken-2">
 <!--    <%= devise_error_messages! %>-->
 </div>
-  
+
+<section class="section-signup">
   <div class="row">
-    <div class="col s12 m4 offset-m4">
-      <br>
-      <h5>Sign up with Food Buddy</h5>
 
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
-        <div class="red-text text-darken-2">
-        	<%= errors_for @user, :email %>
-        </div>
-      </div>
+    <div class="col s12 m5 signup-text">
+      <i class="ion-ios-people-outline"></i>
+      <h5>
+        Begin to meet new people <br>
+        and enjoy food together.
+      </h5>
+    </div>
 
-      <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-        <div class="red-text text-darken-2">
-        	<%= errors_for @user, :password %>
-        </div>
-      </div>
+    <div class= "col s12 m6">
 
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-        <div class="red-text text-darken-2">
-        	<%= errors_for @user, :password_confirmation %>
-        </div>
-      </div>
+          <div class="input-field col s12">
+            <h5>Sign Up</h5>
+          </div>
 
-      <div class="actions">
-        <%= f.submit 'Sign Up', class:'btn waves-effect waves-light' %>
-      </div>   
+          <div class="input-field col s12 m12 l6">
+            <%= f.text_field :firstname%>
+            <%= f.label :firstname, 'First Name *' %>
+          </div>
+          <div class="input-field col s12 m12 l6">
+            <%= f.text_field :lastname %>
+            <%= f.label :lastname, 'Last Name *' %>
+          </div>
+
+          <div class="input-field col s12">
+            <%= f.text_field :email %>
+            <%= f.label :email, 'Email *' %>
+          </div>
+          <div class="input-field col s12">
+            <%= f.password_field :password %>
+            <%= f.label :password, 'Password *' %>
+          </div>
+          <div class="input-field col s12">
+            <%= f.password_field :password %>
+            <%= f.label :password, 'Confirm Password*' %>
+          </div>
+          <div class="input-field col s12">
+            <!--<%= f.submit 'Sign Up', class:'btn waves-effect waves-light' %>
+            <%= submit_tag 'Sign Up', class:'btn waves-effect waves-light' %>-->
+            <%= button_tag( :class => "btn waves-effect waves-light") do %>
+              Submit<i class="material-icons right">send</i>
+            <% end %>
+          </div>
     </div>
   </div>
+</section>
+
 <% end %>

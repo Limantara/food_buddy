@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+
+
 // Mixins
 @import "materialize/components/prefixer";
 @import "materialize/components/mixins";
@@ -41,67 +43,174 @@
 
 //Extra
 @import "materialize/extras/nouislider";
+@import 'ionicons';
 
-html {
-  background-color: #fff;
-  color: #555;
-  font-family: 'Lato', 'Arial', sans-serif;
-  font-size: 20px;
-  font-weight: 300;
-  text-rendering: optimizeLegibility;  
+
+/* ------------- SIGN UP ------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-p {
-  font-size: 80%;
+html,
+body {
+    background-color: #fff;
+    color: #7f8c8d;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
 }
- 
-::-webkit-input-placeholder {
-  font-size: 80%;
+
+/* ------------- REUSABLE ------------ */
+
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 2%;
+}
+
+section {
+    padding: 70px 0;
+}
+
+
+/* -------------- HEADING ------------ */
+h1,
+h2,
+h3,
+h4, 
+h5 {
+    font-weight: 300;
+    letter-spacing: 1px;
+
 }
 
 h1 {
-  margin-top: 0;
-  margin-bottom: 20px;
-  color: #fff;
-  font-size: 200%;
-  font-weight: 300;
-  letter-spacing: 1px;
-  
+    color: #fff;
+    font-size: 200%;
 }
 
-#hero-text-box {
-  position: absolute;
-  width: 1140px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); 
+h2 {
+    font-size: 180%;
+    text-transform: uppercase;
+    word-spacing: 2px;
+    text-align: center;
 }
+
+h3 {
+    font-size: 110%;
+}
+
+h5 {
+    margin-bottom: 30px;
+}
+
+h2:after {
+    display: block;
+    content: "";
+    width: 100px;
+    height: 2px;
+    background-color: #4db6ac;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+/* -------------- BUTTONS ------------ */
+.btn {
+    border-radius: 100px;
+}
+
+/* --------------- ICONS ------------- */
+.icon-big {
+    font-size: 300%;
+    display: block;
+    margin-bottom: 10px;
+    color: #4db6ac;
+}
+
+
+/* ------------ PARAGRAPH ------------ */
+.long-text {
+  line-height: 145%;
+  width: 70%;
+  margin-left: 15%;
+  margin-bottom: 30px;
+}
+
+.box p {
+    font-size: 90%;
+    line-height: 145%;
+}
+
+
+/* -------------- HEADER ------------- */
+.header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), 
+        rgba(0, 0, 0, 0.5)), 
+    asset-url("hero.jpeg");
+    height: 91vh;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+.hero-text-box {
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* ---------------- NAV  ------------- */
 
 .nav-wrapper li a {
-  font-size: 85%;
+    font-size: 85%;
+    color: #fff;
+
 }
 
 #logo {
-  margin-left: 20px;
-  letter-spacing: -1px;
-  float: left;
-}
-
-.hero-header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    asset-url("hero.jpeg");
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  margin-top: -20px;
+    margin-left: 20px;
+    letter-spacing: -1px;
+    float: left;
+    color: #fff;
 }
 
 .rating-view {
-  display: inline;
-  padding-bottom: 10px;
+    display: inline-block;
 }
 
 .search-row {
-  margin-top: 100px;
+    margin-top: 10%;
+
 }
+
+.search-button {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+/* ========== SIGN UP ========== */
+
+.section-signup {
+    width: 100%;
+    height: 91vh;
+}
+
+.ion-ios-people-outline {
+    font-size: 300%;
+    color: #4db6ac;
+}
+
+.signup-text {
+    text-align: center;
+    margin-top: 200px;
+}
+
 

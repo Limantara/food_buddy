@@ -1,37 +1,28 @@
 <div class="container">
   <div class="row search-row">
     <%= form_tag("/restaurants", method: "get") do %>
-      <div class="col s12 m5">
-        <nav>
-          <div class="nav-wrapper teal lighten-2">
-            <div class="input-field">
-              <%= search_field_tag 'search', nil, :placeholder => 'restaurants, tea, sandwiches' %>
-              <%= label_tag(:search, 'Find') %>
-            </div>
-          </div>
-        </nav>
+
+      <div class="input-field col s12 m6">
+        <%= label_tag 'search', 'Find' %>
+        <%= text_field_tag 'search', nil, :required => true, placeholder: 'Search by restaurant, food, drinks...', class: 'validate' %>
       </div>
     
-      <div class="col s12 m5">
-        <nav>
-          <div class="nav-wrapper teal lighten-2">
-            <div class="input-field">
-              <%= search_field_tag 'location', nil, :placeholder => 'San Jose, CA' %>
-              <%= label_tag(:location, 'Near') %>
-            </div>
-          </div>
-        </nav>
+      <div class="input-field col s12 m6">
+        <%= label_tag 'location', 'Near' %>
+        <%= text_field_tag 'location', 'San Jose, CA',  :required => true, class: 'validate' %>
       </div>
     
-      <div class="col s12 m2">
-          <%= submit_tag('Search', class: 'btn btn-lg teal lighten-2 waves-effect waves-light') %> 
+      <div class="row">
+        <div class="col s12">
+            <%= submit_tag('Search', class: 'btn btn-lg teal lighten-2 waves-effect waves-light search-button') %> 
+        </div>
       </div>
     <% end %>
   </div>
 
   <div class="row">
     <% @businesses.each do |business| %>
-      <div class="col s4">
+      <div class="col s12 m6 l4">
         <div class="card medium">
 
           <div class="card-image waves-effect waves-block waves-light">

@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'yelp', require: 'yelp'
 
+gem 'ionicons-rails', '~> 2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
