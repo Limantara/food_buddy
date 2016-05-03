@@ -1,55 +1,48 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <div class="red-text text-darken-2">
-<!--    <%= devise_error_messages! %>-->
+  <!--    <%= devise_error_messages! %>-->
 </div>
-
 <section class="section-signup">
   <div class="row">
-
     <div class="col s12 m5 signup-text">
       <i class="ion-ios-people-outline"></i>
       <h5>
-        Begin to meet new people <br>
-        and enjoy food together.
+      Begin to meet new people <br>
+      and enjoy food together.
       </h5>
     </div>
-
     <div class= "col s12 m6">
-
-          <div class="input-field col s12">
-            <h5>Sign Up</h5>
-          </div>
-
-          <div class="input-field col s12 m12 l6">
-            <%= f.text_field :firstname%>
-            <%= f.label :firstname, 'First Name *' %>
-          </div>
-          <div class="input-field col s12 m12 l6">
-            <%= f.text_field :lastname %>
-            <%= f.label :lastname, 'Last Name *' %>
-          </div>
-
-          <div class="input-field col s12">
-            <%= f.text_field :email %>
-            <%= f.label :email, 'Email *' %>
-          </div>
-          <div class="input-field col s12">
-            <%= f.password_field :password %>
-            <%= f.label :password, 'Password *' %>
-          </div>
-          <div class="input-field col s12">
-            <%= f.password_field :password %>
-            <%= f.label :password, 'Confirm Password*' %>
-          </div>
-          <div class="input-field col s12">
-            <!--<%= f.submit 'Sign Up', class:'btn waves-effect waves-light' %>
-            <%= submit_tag 'Sign Up', class:'btn waves-effect waves-light' %>-->
-            <%= button_tag( :class => "btn waves-effect waves-light") do %>
-              Submit<i class="material-icons right">send</i>
-            <% end %>
-          </div>
+      <div class="input-field col s12">
+        <h5>Sign Up</h5>
+      </div>
+      <div class="input-field col s12 m12 l6">
+        <%= f.text_field :firstname%>
+        <%= f.label :firstname, 'First Name *' %>
+      </div>
+      <div class="input-field col s12 m12 l6">
+        <%= f.text_field :lastname %>
+        <%= f.label :lastname, 'Last Name *' %>
+      </div>
+      <div class="input-field col s12">
+        <%= f.text_field :email %>
+        <%= f.label :email, 'Email *' %>
+      </div>
+      <div class="input-field col s12">
+        <%= f.password_field :password %>
+        <%= f.label :password, 'Password *' %>
+      </div>
+      <div class="input-field col s12">
+        <%= f.password_field :password %>
+        <%= f.label :password, 'Confirm Password*' %>
+      </div>
+      <div class="input-field col s12">
+        <!--<%= f.submit 'Sign Up', class:'btn waves-effect waves-light' %>
+        <%= submit_tag 'Sign Up', class:'btn waves-effect waves-light' %>-->
+        <%= button_tag( :class => "btn waves-effect waves-light") do %>
+        Submit<i class="material-icons right">send</i>
+        <% end %>
+      </div>
     </div>
   </div>
 </section>
-
 <% end %>
