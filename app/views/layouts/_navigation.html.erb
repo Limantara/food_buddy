@@ -6,11 +6,26 @@
 
    
     <ul class="right hide-on-med-and-down">
-      <li><a href="#">ABOUT</a></li>
-      <li><a href="#">CONTACT</a></li>
+      
       <% if user_signed_in? %>
-        <li><%= link_to 'SIGN OUT', destroy_user_session_path, :method => :delete %></li>
+        <!-- Dropdown Trigger -->
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">MESSAGES</a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><%= current_user.firstname %><i class="material-icons right">arrow_drop_down</i></a></li>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><a href="#!">PROFILE</a></li>
+          <li class="divider"></li>
+          <li><%= link_to 'SETTINGS', edit_user_registration_path %></li>
+          <li class="divider"></li>
+          <li><%= link_to 'LOG OUT', destroy_user_session_path, :method => :delete %></li>
+        </ul>  
+          
+                
       <% else %>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">CONTACT</a></li>
         <li><%= link_to 'SIGN UP', new_user_registration_path %></li>
         <li><%= link_to 'LOG IN', new_user_session_path %></li>
       <% end %>
@@ -21,6 +36,7 @@
         <li><a href="#">CONTACT</a></li>
         <% if user_signed_in? %>
           <li><%= link_to 'SIGN OUT', destroy_user_session_path, :method => :delete %></li>
+ 
         <% else %>
         <li><%= link_to 'SIGN UP', new_user_registration_path %></li>
         <li><%= link_to 'LOG IN', new_user_session_path %></li>

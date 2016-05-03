@@ -16,3 +16,13 @@
 //= require_tree .
 //= require materialize-sprockets
 //= require materialize/extras/nouislider
+
+$(document).ready(function() {
+
+		/* Initialization for dropdowns */
+    $(".dropdown-button").dropdown({
+    	belowOrigin: true, // Displays dropdown below the button
+    });
+
+
+});
