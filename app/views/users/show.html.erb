@@ -1,19 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div id="profile-page-header" class="card">
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+		<div class="row">
+			<div class="col s1 left-align">
+				<h4 class="card-title grey-text text-darken-4">Profile Picture Here</h4>
+				<p class="medium-small grey-text"></p>
+			</div>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+			<div class="col s2 left-align">
+				<h4 class="card-title grey-text text-darken-4"><%= current_user.firstname %> <%= current_user.lastname %></h4>
+				<p class="medium-small grey-text">Name</p>
+			</div>
+			<div class="col s3 left-align">
+				<h4 class="card-title grey-text text-darken-4"><%= current_user.email %></h4>
+				<p class="medium-small grey-text">Email Address</p>
+			</div>
+			<div class="col s2 left-align">
+				<h4 class="card-title grey-text text-darken-4">In Progress</h4>
+				<p class="medium-small grey-text">Events</p>
+			</div>
+			<div class="col s2 left-align">
+				<h4 class="card-title grey-text text-darken-4">In Progress</h4>
+				<p class="medium-small grey-text">Following</p>
+			</div>
+			<div class="col s2 left-align">
+				<h4 class="card-title grey-text text-darken-4">In Progress</h4>
+				<p class="medium-small grey-text">Followers</p>
+			</div>
+		</div>
+	</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+</div>

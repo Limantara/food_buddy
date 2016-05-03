@@ -1,18 +1,12 @@
 @charset "UTF-8";
-
-
-
 // Mixins
 @import "materialize/components/prefixer";
 @import "materialize/components/mixins";
 @import "materialize/components/color";
-
 // Variables
 @import "materialize/components/variables";
-
 // Reset
 @import "materialize/components/normalize";
-
 // materialize/components
 @import "materialize/components/global";
 @import "materialize/components/icons-material-design";
@@ -40,13 +34,12 @@
 @import "materialize/components/date_picker/default.scss";
 @import "materialize/components/date_picker/default.date.scss";
 @import "materialize/components/date_picker/default.time.scss";
-
 //Extra
 @import "materialize/extras/nouislider";
 @import 'ionicons';
 
-
 /* ------------- SIGN UP ------------- */
+
 * {
     margin: 0;
     padding: 0;
@@ -64,12 +57,13 @@ body {
     overflow-x: hidden;
 }
 
+
 /* ------------- REUSABLE ------------ */
 
 .row {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 2%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 2%;
 }
 
 section {
@@ -78,14 +72,14 @@ section {
 
 
 /* -------------- HEADING ------------ */
+
 h1,
 h2,
 h3,
-h4, 
+h4,
 h5 {
     font-weight: 300;
     letter-spacing: 1px;
-
 }
 
 h1 {
@@ -118,12 +112,16 @@ h2:after {
     margin-top: 30px;
 }
 
+
 /* -------------- BUTTONS ------------ */
+
 .btn {
     border-radius: 100px;
 }
 
+
 /* --------------- ICONS ------------- */
+
 .icon-big {
     font-size: 300%;
     display: block;
@@ -133,11 +131,12 @@ h2:after {
 
 
 /* ------------ PARAGRAPH ------------ */
+
 .long-text {
-  line-height: 145%;
-  width: 70%;
-  margin-left: 15%;
-  margin-bottom: 30px;
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+    margin-bottom: 30px;
 }
 
 .box p {
@@ -147,16 +146,14 @@ h2:after {
 
 
 /* -------------- HEADER ------------- */
+
 .header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), 
-        rgba(0, 0, 0, 0.5)), 
-    asset-url("hero.jpeg");
-    height: 91vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), asset-url("hero-min.jpeg");
+    height: 93vh;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
 }
-
 
 .hero-text-box {
     position: absolute;
@@ -166,6 +163,7 @@ h2:after {
     transform: translate(-50%, -50%);
     text-align: center;
 }
+
 
 /* ---------------- NAV  ------------- */
 
@@ -181,19 +179,44 @@ h2:after {
     color: #fff;
 }
 
+.card a {
+    font-size: 90%;
+}
+
+.card p {
+    font-size: 90%;
+}
+
+.black-text {
+    font-size: 90%;
+    line-height: 80%;
+}
+
+
+.card .card-content {
+    padding: 10px;
+}
+
+.card .card-title {
+    font-size: 90%;
+}
+
+.rating-image img {}
+
 .rating-view {
+    font-size: 80%;
     display: inline-block;
 }
 
 .search-row {
     margin-top: 10%;
-
 }
 
 .search-button {
-  margin-top: 10px;
-  margin-left: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
+
 
 /* ========== SIGN UP ========== */
 
@@ -211,5 +234,3 @@ h2:after {
     text-align: center;
     margin-top: 200px;
 }
-
-

@@ -70,28 +70,28 @@ class RestaurantsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_restaurant
-      @restaurant = Restaurant.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_restaurant
+    @restaurant = Restaurant.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def restaurant_params
-      params.require(:restaurant).permit(:name, :address, :time)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def restaurant_params
+    params.require(:restaurant).permit(:name, :address, :time)
+  end
 
-    def save_restaurants
-      @businesses.each do |business| 
-        restaurant = Restaurant.find_by :yelp_id => business.id
+  def save_restaurants
+    @businesses.each do |business|
+      restaurant = Restaurant.find_by :yelp_id => business.id
 
-        if restaurant.nil?
-          address = "#{business.location.address[0]} <br> " +
-                    "#{business.location.city}, #{business.location.state_code} #{business.location.postal_code }"
+      if restaurant.nil?
+        address = "#{business.location.address[0]} <br> " +
+          "#{business.location.city}, #{business.location.state_code} #{business.location.postal_code }"
 
           Restaurant.create(:name => business.name, :address => address, :yelp_id => business.id,
                             :image_url => business.image_url, :review_count => business.review_count,
                             :rating_img_url => business.rating_img_url)
-        end
-      end
+          end
     end
+  end
 end
