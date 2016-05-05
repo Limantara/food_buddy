@@ -23,9 +23,20 @@
 							<img src="<%= event.restaurant.rating_img_url %>">
 							<p class="rating-view"><%= event.restaurant.review_count %> reviews</p>
 						</div>
-						<small>Created by <%= link_to event.user.firstname, user_path(event.user) if event.user %></small>
+
+						
 						<p>Meet @ <%= event.time %></p>
-						<p><a href="#">JOIN</a></p>
+						
+						<div class="event-user">
+							<div class="user-info">
+								<%= image_tag(event.user.picture.url, class: "responsive-img circle profile-picture-xsmall") %>
+								<%= link_to event.user.firstname+ " " +event.user.lastname, user_path(event.user) if event.user %> 
+							</div>
+							<div class="join-link">
+									<p><a href="#">JOIN</a></p>
+							</div>
+						</div>
+
 					</div>
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4">

@@ -41,9 +41,15 @@ section {
 
 .profile-picture-small {
     width: 80px;
-    height: auto;
+    height: 80px;
+    position: center;
 }
 
+.profile-picture-xsmall {
+    width: 40px;
+    height: 40px;
+    position: center;
+}
 
 /* -------------- HEADING ------------ */
 
@@ -182,6 +188,26 @@ h2:after {
     vertical-align: top;
 }
 
+.event-user {
+    display: inline-block;
+    width: 100%;
+}
+
+.user-info {
+    display: inline-block;
+    float: left;
+}
+
+.user-info a {
+    vertical-align: 50%;
+}
+
+.join-link {
+    float: right;
+    margin-top: 7px;
+}
+
+
 /* ---------------- SEARCH  ------------- */
 
 .search-row {
@@ -210,3 +236,6 @@ h2:after {
     text-align: center;
     margin-top: 100px;
 }
+
+
+
