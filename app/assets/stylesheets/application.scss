@@ -144,7 +144,6 @@ h2:after {
     line-height: 145%;
 }
 
-
 /* -------------- HEADER ------------- */
 
 .header {
@@ -179,6 +178,9 @@ h2:after {
     color: #fff;
 }
 
+
+/* ---------------- CARD  ------------- */
+
 .card a {
     font-size: 90%;
 }
@@ -192,7 +194,6 @@ h2:after {
     line-height: 80%;
 }
 
-
 .card .card-content {
     padding: 10px;
 }
@@ -201,12 +202,13 @@ h2:after {
     font-size: 90%;
 }
 
-.rating-image img {}
-
 .rating-view {
     font-size: 80%;
     display: inline-block;
+    vertical-align: top;
 }
+
+/* ---------------- SEARCH  ------------- */
 
 .search-row {
     margin-top: 10%;
@@ -232,5 +234,5 @@ h2:after {
 
 .signup-text {
     text-align: center;
-    margin-top: 200px;
+    margin-top: 100px;
 }

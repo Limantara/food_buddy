@@ -3,13 +3,11 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   # GET /events
-  # GET /events.json
   def index
     @events = Event.all
   end
 
   # GET /events/1
-  # GET /events/1.json
   def show
   end
 
@@ -24,7 +22,6 @@ class EventsController < ApplicationController
   end
 
   # POST /events
-  # POST /events.json
   def create
     @restaurant = Restaurant.find_by :yelp_id => params[:event][:restaurant]
     @event = Event.new(event_params)
@@ -44,7 +41,6 @@ class EventsController < ApplicationController
   end
 
   # PATCH/PUT /events/1
-  # PATCH/PUT /events/1.json
   def update
     respond_to do |format|
       if @event.update(event_params)
@@ -58,7 +54,6 @@ class EventsController < ApplicationController
   end
 
   # DELETE /events/1
-  # DELETE /events/1.json
   def destroy
     @event.destroy
     respond_to do |format|

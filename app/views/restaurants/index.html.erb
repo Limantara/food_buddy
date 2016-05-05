@@ -1,59 +1,24 @@
 <div class="container">
+
   <div class="row search-row">
     <%= form_tag("/restaurants", method: "get") do %>
-
-      <div class="input-field col s12 m6">
-        <%= label_tag 'search', 'Find' %>
-        <%= text_field_tag 'search', nil, :required => true, placeholder: 'Search by restaurant, food, drinks...', class: 'validate' %>
-      </div>
+    <div class="input-field col s12 m6">
+      <%= label_tag 'search', 'Find' %>
+      <%= text_field_tag 'search', nil, :required => true, placeholder: 'Search by restaurant, food, drinks...', class: 'validate' %>
+    </div>
     
-      <div class="input-field col s12 m6">
-        <%= label_tag 'location', 'Near' %>
-        <%= text_field_tag 'location', 'San Jose, CA',  :required => true, class: 'validate' %>
-      </div>
+    <div class="input-field col s12 m6">
+      <%= label_tag 'location', 'Near' %>
+      <%= text_field_tag 'location', 'San Jose, CA',  :required => true, class: 'validate' %>
+    </div>
     
-      <div class="row">
-        <div class="col s12">
-            <%= submit_tag('Search', class: 'btn btn-lg teal lighten-2 waves-effect waves-light search-button') %> 
-        </div>
+    <div class="row">
+      <div class="col s12">
+        <%= submit_tag('Search', class: 'btn btn-lg teal lighten-2 waves-effect waves-light search-button') %>
       </div>
+    </div>
     <% end %>
   </div>
-
-  <div class="row">
-    <% @businesses.each do |business| %>
-      <div class="col s12 m6 l4">
-        <div class="card medium">
-
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="<%= (business.image_url).sub('/ms', '/348s') %>">
-          </div>
-          
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">
-              <%= truncate(business.name, :length => 20) %> 
-              <i class="material-icons right">more_vert</i>
-            </span>
-      
-            <div class="rating-image">
-              <img src=" <%= business.rating_img_url %>" >
-              <p class="rating-view"><%= business.review_count %> reviews</p>
-            </div> 
-
-            <p><%= link_to 'Host Event', :controller => "events", :action => "new", :restaurant => business.id%></p>
-          </div>
-          
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">
-              <%= business.name %>
-              <i class="material-icons right">close</i>
-            </span>
-            <p><%= business.location.address[0] %><br>
-            <%= business.location.city %>, <%= business.location.state_code %> <%= business.location.postal_code %></p>
-          </div>
-        </div>
-      </div>  
-    <% end %>
-  </div>
+  <!-- Display a list of all restaurants -->
+  <%= render 'restaurants/restaurant' %>
 </div>
-

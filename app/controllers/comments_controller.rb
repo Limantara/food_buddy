@@ -2,13 +2,11 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   # GET /comments
-  # GET /comments.json
   def index
     @comments = Comment.all
   end
 
   # GET /comments/1
-  # GET /comments/1.json
   def show
   end
 
@@ -22,7 +20,6 @@ class CommentsController < ApplicationController
   end
 
   # POST /comments
-  # POST /comments.json
   def create
     @comment = Comment.new(comment_params)
 

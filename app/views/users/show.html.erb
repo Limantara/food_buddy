@@ -1,32 +1,32 @@
+<%# Used to show the current user profile and all his/her events %>
 <div id="profile-page-header" class="card">
-
-		<div class="row">
-			<div class="col s1 left-align">
-				<h4 class="card-title grey-text text-darken-4">Profile Picture Here</h4>
-				<p class="medium-small grey-text"></p>
-			</div>
-
-			<div class="col s2 left-align">
-				<h4 class="card-title grey-text text-darken-4"><%= current_user.firstname %> <%= current_user.lastname %></h4>
-				<p class="medium-small grey-text">Name</p>
-			</div>
-			<div class="col s3 left-align">
-				<h4 class="card-title grey-text text-darken-4"><%= current_user.email %></h4>
-				<p class="medium-small grey-text">Email Address</p>
-			</div>
-			<div class="col s2 left-align">
-				<h4 class="card-title grey-text text-darken-4">In Progress</h4>
-				<p class="medium-small grey-text">Events</p>
-			</div>
-			<div class="col s2 left-align">
-				<h4 class="card-title grey-text text-darken-4">In Progress</h4>
-				<p class="medium-small grey-text">Following</p>
-			</div>
-			<div class="col s2 left-align">
-				<h4 class="card-title grey-text text-darken-4">In Progress</h4>
-				<p class="medium-small grey-text">Followers</p>
-			</div>
+	<div class="row">
+		<div class="col s1 left-align">
+			<h4 class="card-title grey-text text-darken-4">Profile Picture Here</h4>
+			<p class="medium-small grey-text"></p>
+		</div>
+		<div class="col s2 left-align">
+			<h4 class="card-title grey-text text-darken-4"><%= current_user.firstname %> <%= current_user.lastname %></h4>
+			<p class="medium-small grey-text">Name</p>
+		</div>
+		<div class="col s3 left-align">
+			<h4 class="card-title grey-text text-darken-4"><%= current_user.email %></h4>
+			<p class="medium-small grey-text">Email Address</p>
+		</div>
+		<div class="col s2 left-align">
+			<h4 class="card-title grey-text text-darken-4">In Progress</h4>
+			<p class="medium-small grey-text">Events</p>
+		</div>
+		<div class="col s2 left-align">
+			<h4 class="card-title grey-text text-darken-4">In Progress</h4>
+			<p class="medium-small grey-text">Following</p>
+		</div>
+		<div class="col s2 left-align">
+			<h4 class="card-title grey-text text-darken-4">In Progress</h4>
+			<p class="medium-small grey-text">Followers</p>
 		</div>
 	</div>
-
+	<div class="row">
+		<%= image_tag current_user.picture.url if current_user.picture? %>
+	</div>
 </div>
