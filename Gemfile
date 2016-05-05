@@ -2,8 +2,7 @@ source 'https://rubygems.org'
 
 gem 'yelp', require: 'yelp'
 gem 'ionicons-rails', '~> 2.0'
-gem 'materialize-sass'
-gem 'devise'
+
 
 
 gem 'carrierwave'
@@ -17,6 +16,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 
+gem 'materialize-sass'
+gem 'devise'
 
 gem 'jquery-rails'
 gem 'turbolinks'
