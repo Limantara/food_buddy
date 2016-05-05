@@ -36,7 +36,7 @@
         <%= f.label :password, 'Confirm Password*' %>
       </div>
       <div class="input-field col s12">
-        <%= f.file_field :picture %>
+        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
       </div>
       <div class="input-field col s12">
         <!--<%= f.submit 'Sign Up', class:'btn waves-effect waves-light' %>

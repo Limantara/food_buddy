@@ -27,6 +27,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<%= image_tag current_user.picture.url if current_user.picture? %>
+		<h3> <%=  current_user.picture.url if current_user.picture? %> </h3>
+		<%= image_tag(current_user.picture.url, class: "responsive-img circle") %>
 	</div>
 </div>
