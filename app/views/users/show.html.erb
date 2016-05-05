@@ -2,14 +2,14 @@
 <div id="profile-page-header" class="card">
 	<div class="row">
 		<div class="col s2 left-align profile">
-			<%= image_tag(current_user.picture.url, class: "responsive-img circle profile-picture-small") %>
+			<%= image_tag(@user.picture.url, class: "responsive-img circle profile-picture-small") %>
 		</div>
 		<div class="col s2 left-align">
-			<h4 class="card-title grey-text text-darken-4"><%= current_user.firstname %> <%= current_user.lastname %></h4>
+			<h4 class="card-title grey-text text-darken-4"><%= @user.firstname %> <%= @user.lastname %></h4>
 			<p class="medium-small grey-text">Name</p>
 		</div>
 		<div class="col s3 left-align">
-			<h4 class="card-title grey-text text-darken-4"><%= current_user.email %></h4>
+			<h4 class="card-title grey-text text-darken-4"><%= @user.email %></h4>
 			<p class="medium-small grey-text">Email Address</p>
 		</div>
 		<div class="col s2 left-align">

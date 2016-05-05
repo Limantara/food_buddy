@@ -23,6 +23,7 @@
 							<img src="<%= event.restaurant.rating_img_url %>">
 							<p class="rating-view"><%= event.restaurant.review_count %> reviews</p>
 						</div>
+						<small>Created by <%= link_to event.user.firstname, user_path(event.user) if event.user %></small>
 						<p>Meet @ <%= event.time %></p>
 						<p><a href="#">JOIN</a></p>
 					</div>

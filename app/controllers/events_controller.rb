@@ -26,6 +26,7 @@ class EventsController < ApplicationController
     @restaurant = Restaurant.find_by :yelp_id => params[:event][:restaurant]
     @event = Event.new(event_params)
     @event.user_id = current_user.id
+    @event.user = current_user
     @event.restaurant_id = @restaurant.id
     @event.time = params[:event][:time]
 
