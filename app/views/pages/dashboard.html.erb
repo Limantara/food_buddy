@@ -29,7 +29,6 @@
 						
 						<div class="event-user">
 							<div class="user-info">
-								<%= image_tag(event.user.picture.url, class: "responsive-img circle profile-picture-xsmall") %>
 								<%= link_to event.user.firstname+ " " +event.user.lastname, user_path(event.user) if event.user %> 
 							</div>
 							<div class="join-link">

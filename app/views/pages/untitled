@@ -1,0 +1,1 @@
+<%= image_tag(http://stech2.firstpost.com/tech2images/640x359/proportional/jpeg/gallery/2013/aug/facebookprofile_301007399129.jpg, class: "responsive-img circle profile-picture-xsmall") %>
