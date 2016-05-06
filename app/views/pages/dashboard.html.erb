@@ -33,7 +33,9 @@
 							</div>
 							<div class="join-link">
 								<% if current_user != event.user %>
-									<p><a href="#">JOIN</a></p>
+									<p>
+										<%= link_to 'JOIN', event_path(event, :join => "true")  %>
+									</p>
 								<% end %>
 							</div>
 						</div>

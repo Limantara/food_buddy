@@ -9,6 +9,13 @@ class EventsController < ApplicationController
 
   # GET /events/1
   def show
+    if params[:join] == "true"
+      # @event.users << current_user
+      # EventsUsers.create(:event_id => @event.id, :user_id => current_user.id)
+      GuestList.create(:event_id => @event.id, :user_id => current_user.id)
+      flash[:notice] = 'You succesfully joined an event.'
+      redirect_to @event
+    end
   end
 
   # GET /events/new
