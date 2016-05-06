@@ -15,5 +15,9 @@
   <%= @event.message %>
 </p>
 
+<%= render partial: "comments/template", locals: {commentable: @event, new_comment: @new_comment} %>
+  
+
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

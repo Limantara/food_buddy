@@ -9,8 +9,10 @@ class EventsController < ApplicationController
 
   # GET /events/1
   def show
+    @new_comment    = Comment.build_from(@event, current_user.id, "")
     if params[:join] == "true"
       GuestList.create(:event_id => @event.id, :user_id => current_user.id)
+
       flash[:notice] = 'You succesfully joined an event.'
       redirect_to @event
     end
