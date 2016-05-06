@@ -18,6 +18,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'materialize-sass'
 gem 'devise'
+gem 'acts_as_commentable_with_threading' 
 
 gem 'jquery-rails'
 gem 'turbolinks'
