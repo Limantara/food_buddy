@@ -323,7 +323,7 @@ DEPENDENCIES
   byebug
   carrierwave
   coffee-rails (~> 4.1.0)
-  devise (~> 3.5.9)
+  devise
   fog
   ionicons-rails (~> 2.0)
   jbuilder (~> 2.0)
@@ -341,4 +341,4 @@ DEPENDENCIES
   yelp
 
 BUNDLED WITH
-   1.11.2
+   1.12.2
