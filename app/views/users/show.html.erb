@@ -52,7 +52,7 @@
 							<%= link_to event.user.firstname+ " " +event.user.lastname, user_path(event.user) if event.user %>
 						</div>
 						<div class="join-link">
-							<% if current_user != event.user %>
+							<% if current_user != event.user && GuestList.exists?(event_id: event.id, user_id: current_user.id) == false %>
 								<p><a href="#">JOIN</a></p>
 							<% end %>
 						</div>
