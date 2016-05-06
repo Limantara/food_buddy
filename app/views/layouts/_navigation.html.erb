@@ -1,6 +1,6 @@
 <nav class="main-nav">
   <div class="nav-wrapper teal lighten-2">
-    <%= link_to 'Food Buddy', root_path, class: "brand-logo ", id: "logo" %>
+    <%= link_to 'Food Buddy', root_path, :method => :get, class: "brand-logo ", id: "logo" %>
     <a href="#" data-activates="nav-mobile" class="button-collapse">
     <i class="material-icons">menu</i></a>
     
@@ -8,9 +8,9 @@
       
       <% if user_signed_in? %>
       <!-- Dropdown Trigger -->
-      <li><a href="#">HOME</a></li>
+      <li><%= link_to 'HOME', root_path, :method => :get %></li>
       <li><a href="#">MESSAGES</a></li>
-      <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><%= current_user.firstname %><i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a class="dropdown-button" href="#" data-activates="dropdown1"><%= current_user.firstname %><i class="material-icons right">arrow_drop_down</i></a></li>
       <!-- Dropdown Structure -->
       <ul id='dropdown1' class='dropdown-content'>
         <li><%= link_to 'PROFILE', user_path(current_user), :method => :get %></li>
