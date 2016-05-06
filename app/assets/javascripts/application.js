@@ -40,7 +40,12 @@ $(document).ready(function() {
             "resource[email]":{required:true, email:true}
             "resource[password]":{required:true, minlength:8}
         }
-    })
+    });
+
+    $('.comment-reply').click - >
+        $(this).closest('.comment').find('.reply-form').toggle()
+    return
+
 
 });
 
