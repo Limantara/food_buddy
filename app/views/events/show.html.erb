@@ -93,6 +93,9 @@
 			    </li>
 			    <li>
 			      <div class="collapsible-header"><i class="material-icons">comment</i>Comments</div>
+
+			      <%= render partial: "comments/template", locals: {commentable: @event, new_comment: @comment} %>  
+
 			      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
 			    </li>
 			  </ul>

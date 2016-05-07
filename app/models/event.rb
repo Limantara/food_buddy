@@ -2,7 +2,6 @@ class Event < ActiveRecord::Base
   belongs_to :user
   belongs_to :restaurant
   has_many :comments
-<<<<<<< HEAD
 
   def guests 
   	guests = []
@@ -14,7 +13,5 @@ class Event < ActiveRecord::Base
   	guests
   end
 
-=======
   acts_as_commentable
->>>>>>> 703d2ac... Built a comment feature for each event page
 end
