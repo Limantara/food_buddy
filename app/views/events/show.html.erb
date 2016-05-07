@@ -1,6 +1,114 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<section>
+	<div class="row">
+
+	  <div class="hide-on-med-and-down col l3"> <!-- Note that "m4 l3" was added -->
+	    <!-- Grey navigation panel
+
+	          This content will be:
+	      3-columns-wide on large screens,
+	      4-columns-wide on medium screens,
+	      12-columns-wide on small screens  -->
+
+	      <div class="card medium">
+					<div class="card-image waves-effect waves-block waves-light">
+						<!-- <img class="activator" src="http://materializecss.com/images/office.jpg"> -->
+						<img class="activator" src="<%= (@event.restaurant.image_url).sub('/ms', '/348s') %>">
+						<!-- <div class="card-title">3:00 pm</div> -->
+					</div>
+					<div class="card-content">
+						<span class="card-title activator grey-text text-darken-4">
+							<%= truncate(@event.restaurant.name, :length => 20)%>
+							<i class="material-icons right">more_vert</i>
+						</span>
+						<div class="rating-image">
+							<img src="<%= @event.restaurant.rating_img_url %>">
+							<p class="rating-view"><%= @event.restaurant.review_count %> reviews</p>
+						</div>
+
+						
+						<p>Meet @ <%= @event.time %></p>
+						
+						<div class="event-user">
+							<div class="user-info">
+								<%= link_to @event.user.firstname+ " " +@event.user.lastname, user_path(@event.user) if @event.user %> 
+							</div>
+							<div class="join-link">
+								<% if current_user != @event.user && GuestList.exists?(event_id: @event.id, user_id: current_user.id) == false %>
+									<p>
+										<%= link_to 'JOIN', event_path(event, :join => "true")  %>
+									</p>
+								<% end %>
+							</div>
+						</div>
+
+					</div>
+					<div class="card-reveal">
+						<span class="card-title grey-text text-darken-4">
+							<%= @event.restaurant.name %>
+							<i class="material-icons right">close</i>
+						</span>
+						<p><%= @event.restaurant.address.html_safe %></p>
+						<hr>
+						<div class="row valign-wrapper">
+							<div class="col s2">
+								<img src="http://materializecss.com/images/yuna.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+							</div>
+							<div class="col s10">
+								<span class="black-text">
+									<%= @event.message %>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+	  </div>
+
+	  <div class="col s12 m8 l9"> 
+	      <ul class="collapsible popout" data-collapsible="accordion">
+			    <li>
+			      <div class="collapsible-header active"><i class="material-icons">filter_drama</i>Who's Going</div>
+			      <div class="collapsible-body">
+			      	<br>
+				      	<div class="row">
+				      		<div class="chip teal white-text">
+								    <img src="<%= @event.user.picture %>" alt="Contact Person">
+								    <%= @event.user.firstname + " " + @event.user.lastname %>
+								  </div>
+				      		<% @event.guests.each do |guest| %>
+					      		<div class="chip">
+									    <img src="<%= guest.picture %>" alt="Contact Person">
+									    <%= guest.firstname + " " + guest.lastname %>
+									  </div>
+				      		<% end %>
+				      	</div>
+			      	<br>
+			      </div>
+			    </li>
+			    <li>
+			      <div class="collapsible-header"><i class="material-icons">place</i>Where</div>
+			      <div class="collapsible-body"><p><%= @event.restaurant.address.html_safe %></p></div>
+			    </li>
+			    <li>
+			      <div class="collapsible-header"><i class="material-icons">comment</i>Comments</div>
+
+			      <%= render partial: "comments/template", locals: {commentable: @event, new_comment: @comment} %>  
+
+			      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+			    </li>
+			  </ul>
+
+	  </div>
+
+	</div>
+</section>
+
+
+
+
+<!-- <p>
   <strong>User:</strong>
   <%= @event.user %>
 </p>
@@ -21,3 +129,4 @@
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
+ -->

@@ -9,7 +9,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 
-
+gem 'jquery-validation-rails'
 gem 'rails', '4.2.5'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'

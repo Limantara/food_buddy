@@ -16,6 +16,8 @@
 //= require_tree .
 //= require materialize-sprockets
 //= require materialize/extras/nouislider
+//= require jquery.validate
+//= require jquery.validate.additional-methods
 
 $(document).ready(function() {
 
@@ -31,9 +33,20 @@ $(document).ready(function() {
         }
     });
 
+    $("#test").validate({
+        rules:{
+            "resource[firstname]" :{required:true},
+            "resource[lastname]" :{required:true},
+            "resource[email]":{required:true, email:true}
+            "resource[password]":{required:true, minlength:8}
+        }
+    });
+
     $('.comment-reply').click - >
         $(this).closest('.comment').find('.reply-form').toggle()
     return
 
 
 });
+
+
