@@ -13,4 +13,5 @@ class Event < ActiveRecord::Base
   	guests
   end
 
+  acts_as_commentable
 end

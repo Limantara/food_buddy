@@ -9,7 +9,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 
-
+gem 'jquery-validation-rails'
 gem 'rails', '4.2.5'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
@@ -18,6 +18,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'materialize-sass'
 gem 'devise'
+gem 'acts_as_commentable_with_threading' 
 
 gem 'jquery-rails'
 gem 'turbolinks'
