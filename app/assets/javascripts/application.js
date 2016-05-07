@@ -42,7 +42,7 @@ $(document).ready(function() {
         }
     });
 
-    $('.comment-reply').click - >
+    $('.comment-reply').click ->
         $(this).closest('.comment').find('.reply-form').toggle()
     return
 
