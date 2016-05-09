@@ -257,30 +257,53 @@ h2:after {
 .comments-header {
   border-bottom: 1px dotted gray;
   margin-bottom: 10px;
+  padding: 10px 30px;
 }
+
+.new_comment,
+.comments-show {
+    padding: 0 30px;
+}
+
+
+.comment a {
+    font-size: 80%;
+}
+
+.comment p {
+    display: inline-block;
+}
+
+.comment-text {
+    display: inline-block;
+    margin-left: 10px;
+}
+
 
 .comments-container {
   p {
     margin-bottom: 0px;
+    font-size: 80%;
   }
+
   .comment-nav {
-    margin-left: 5px;
+    margin-top: -12px;
+    vertical-align: top;
+    margin-left: 0px;
     margin-bottom: 10px;
 
     a {
-      font-size: 10px;
+      font-size: 60%;
       font-weight: bold;
-      color: #888;
+      color: #7f8c8d;
     }
+
   }
+  margin-top: 20px;
 }
 
 .reply-form {
   display: none;
-}
-
-.comments-show {
-  margin-left: 25px;
 }
 
 
