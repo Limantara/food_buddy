@@ -1,8 +1,13 @@
 <% comments.each do |comment| %>  
   <div class="comments-show">
     <div class="comment">
+
+      <%= image_tag(comment.user.picture.url, class: "responsive-img profile-picture-xsmall") %>
+
+      <div class="comment-text">
+      <%= link_to comment.user.firstname+ " " +comment.user.lastname, user_path(comment.user) if comment.user %>
       <p><%= comment.body %><br></p>
-      <div class="comment-nav"><a href="#" class="comment-reply">reply</a></div>
+      <div class="comment-nav"><a href="#" class="comment-reply">Reply</a></div>
       <div class="reply-form">
         <%= form_for @new_comment do |f| %>
           <%= f.hidden_field :commentable_id, value: @new_comment.commentable_id %>
@@ -15,7 +20,9 @@
             <%= submit_tag "Post Reply", class: 'btn btn-primary' %>
           </div>
         <% end %>
+        </div>
       </div>
+
     </div>
     <%= render partial: "comments/reply", locals: {comments: comment.children} %>
   </div>

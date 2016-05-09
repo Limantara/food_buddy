@@ -22,8 +22,9 @@
 $(document).ready(function() {
 
     /* Initialization for dropdowns */
-    $(".dropdown-button").dropdown({
+    $('.dropdown-button').dropdown({
         belowOrigin: true, // Displays dropdown below the button
+        alignment: 'right'
     });
 
     $('#user_picture').bind('change', function() {
@@ -41,11 +42,6 @@ $(document).ready(function() {
             "resource[password]":{required:true, minlength:8}
         }
     });
-
-    $('.comment-reply').click ->
-        $(this).closest('.comment').find('.reply-form').toggle()
-    return
-
 
 });
 
