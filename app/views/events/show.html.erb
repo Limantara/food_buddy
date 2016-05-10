@@ -64,7 +64,7 @@
 					<div class="row">
 						<div class="chip teal white-text">
 							<img src="<%= @event.user.picture %>" alt="Contact Person">
-							<%= @event.user.firstname + " " + @event.user.lastname %>
+							<%= link_to @event.user.firstname + " " + @event.user.lastname, user_path(@event.user), :class => 'white-text' %>
 						</div>
 						<% @event.guests.each do |guest| %>
 						<div class="chip">
