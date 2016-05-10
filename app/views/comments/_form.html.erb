@@ -2,7 +2,8 @@
   <%= f.hidden_field :commentable_id, value: @new_comment.commentable_id %>
   <%= f.hidden_field :commentable_type, value: @new_comment.commentable_type %>
   <div class="field form-group">
-    <%= f.text_area :body, class: 'form-control' %>
+  	<label for="form">Your Comment</label>
+    <%= f.text_area :body, class: 'materialize-textarea form-control', id: 'form' %>
   </div>
   <div class="field form-group">
     <%= submit_tag "Post comment", class: 'btn btn-primary' %>
