@@ -35,8 +35,15 @@
         <%= f.password_field :password %>
         <%= f.label :password, 'Confirm Password*' %>
       </div>
-      <div class="input-field col s12">
+      <div class="file-field input-field col s12">
+      <div class="btn waves-effect waves-light">
+        <span>PICTURE</span>
         <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+        
       </div>
       <div class="input-field col s12">
         <!--<%= f.submit 'Sign Up', class:'btn waves-effect waves-light' %>
