@@ -18,12 +18,15 @@
 //= require materialize/extras/nouislider
 //= require jquery.validate
 //= require jquery.validate.additional-methods
+//= require underscore
+//= require gmaps/google
 
 $(document).ready(function() {
 
     /* Initialization for dropdowns */
-    $(".dropdown-button").dropdown({
+    $('.dropdown-button').dropdown({
         belowOrigin: true, // Displays dropdown below the button
+        alignment: 'right'
     });
 
     $('#user_picture').bind('change', function() {
@@ -33,20 +36,4 @@ $(document).ready(function() {
         }
     });
 
-    $("#test").validate({
-        rules:{
-            "resource[firstname]" :{required:true},
-            "resource[lastname]" :{required:true},
-            "resource[email]":{required:true, email:true}
-            "resource[password]":{required:true, minlength:8}
-        }
-    });
-
-    $('.comment-reply').click ->
-        $(this).closest('.comment').find('.reply-form').toggle()
-    return
-
-
 });
-
-

@@ -1,7 +1,7 @@
 <div class="comments-header">  
-  <h4>
-    <%= commentable.comment_threads.count == 0 ? "no" : commentable.comment_threads.count %> comments
-  </h4>
+  <p>
+    <%= commentable.comment_threads.count == 0 ? "No" : commentable.comment_threads.count %> comments
+  </p>
 </div>
 
 <%= render partial: "comments/form", locals: {new_comment: new_comment} %>

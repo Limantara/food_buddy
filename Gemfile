@@ -3,6 +3,11 @@ source 'https://rubygems.org'
 gem 'yelp', require: 'yelp'
 gem 'ionicons-rails', '~> 2.0'
 
+gem 'gmaps4rails'
+gem 'underscore-rails'
+
+gem 'mailboxer'
+
 
 
 gem 'carrierwave'
