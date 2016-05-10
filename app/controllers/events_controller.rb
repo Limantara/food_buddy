@@ -10,12 +10,20 @@ class EventsController < ApplicationController
   # GET /events/1
   def show
     @new_comment    = Comment.build_from(@event, current_user.id, "")
+
+    @restaurant = @event.restaurant
+    @map_hash = Gmaps4rails.build_markers(@restaurant) do |restaurant, marker|
+      marker.lat restaurant.latitude
+      marker.lng restaurant.longitude
+    end
+
     if params[:join] == "true"
       GuestList.create(:event_id => @event.id, :user_id => current_user.id)
 
       flash[:notice] = 'You succesfully joined an event.'
       redirect_to event_path(@event), "method"=>"get"
     end
+
   end
 
   # GET /events/new
@@ -71,13 +79,13 @@ class EventsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_event
-      @event = Event.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_event
+    @event = Event.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def event_params
-      params.require(:event).permit(:user_id, :restaurant_id, :message)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def event_params
+    params.require(:event).permit(:user_id, :restaurant_id, :message)
+  end
 end

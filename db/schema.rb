@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506034829) do
+ActiveRecord::Schema.define(version: 20160509164837) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "commentable_id"
@@ -82,6 +82,8 @@ ActiveRecord::Schema.define(version: 20160506034829) do
     t.string   "image_url"
     t.integer  "review_count"
     t.string   "rating_img_url"
+    t.string   "latitude"
+    t.string   "longitude"
   end
 
   create_table "users", force: :cascade do |t|
