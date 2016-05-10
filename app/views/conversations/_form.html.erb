@@ -1,0 +1,21 @@
+<%= form_for :conversation, url: :conversations, html: { class: "" } do |f| %>
+
+
+    <div class="input-field">
+    
+    <%= f.label :recipients %>
+      <%= f.text_field :recipients, placeholder: "Recipients", class: "validate" %>
+    </div>
+
+    <div class="input-field">
+      <%= f.label :subject %>
+      <%= f.text_field :subject, placeholder: "Subject", class: "validate" %>
+    </div>
+
+    <div class="input-field">
+      <%= f.label :message %>
+      <%= f.text_area :body, class: 'materialize-textarea', placeholder: "Type your message here", rows: 4  %>
+    </div>
+
+    <%= f.submit "Send Message", class: "btn" %>
+<% end %>

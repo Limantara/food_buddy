@@ -1,0 +1,15 @@
+<div class="collection">
+    <%= link_to mailbox_inbox_path, method: "GET", class: "collection-item" do  %>
+        Inbox
+        <span class="new badge"><%=unread_messages_count%></span>
+    <% end %>
+
+    <%= link_to mailbox_sent_path, method: "GET", class: "collection-item" do %>
+        Sent
+    <% end %>   
+
+    <%= link_to mailbox_trash_path, method: "GET", class: "collection-item" do %>
+        Trash
+    <% end %>  
+
+  </div>

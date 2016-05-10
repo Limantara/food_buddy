@@ -1,0 +1,24 @@
+<section>
+<div class="container main-section">
+<div class="row">
+  <div class="col m12">
+    <!-- we'll configure this to compose new conversations later -->
+    <%= link_to "Compose", new_conversation_path, class: "btn waves-effect waves-light" %>
+  </div>
+
+  <div class="col m4">
+        <%= render 'mailbox/folders' %>
+  </div>
+
+  <div class="col m8">
+      <% if is_conversation %>
+          <%= render 'conversations/form' %>
+        <% else %>
+          <%= render partial: 'conversations/conversation', collection: messages %>
+        <% end %>
+  </div>
+
+</div>
+</div>
+
+</section>

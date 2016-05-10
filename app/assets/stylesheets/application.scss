@@ -89,6 +89,10 @@ h3 {
     font-size: 110%;
 }
 
+h4 {
+    font-size: 100%;
+}
+
 h5 {
     margin-bottom: 30px;
 }
@@ -318,4 +322,29 @@ h2:after {
     height: 400px;
     z-index: 99999;
 }
+
+/* ========== MESSAGE ========== */
+.message_content {
+    display: block;
+}
+
+.card .card-action {
+    padding: 0px 10px;
+}
+
+.media-left {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 0px;
+}
+
+.media-body {
+    display: inline-block;
+}
+
+.media-body p {
+    line-height: 100%;
+}
+
+
 
