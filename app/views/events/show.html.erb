@@ -32,7 +32,8 @@
 					<div class="join-link">
 						<% if current_user != @event.user && GuestList.exists?(event_id: @event.id, user_id: current_user.id) == false %>
 						<p>
-							<%= link_to 'JOIN', event_path(event, :join => "true")  %>
+							<%= link_to 'JOIN', event_path(@event, :join => "true"), :method => :get
+							%>
 						</p>
 						<% end %>
 					</div>
@@ -83,11 +84,10 @@
 				<div class="collapsible-header" onclick="displayMap()"><i class="material-icons">place</i>Where</div>
 				<div class="collapsible-body">
 					<p><%= @event.restaurant.address.html_safe %></p>
-
 				</div>
 				<div class="map-container">
-						<div id="map" class="map"></div>
-					</div>
+					<div id="map" class="map"></div>
+				</div>
 			</li>
 			<li>
 				<div class="collapsible-header"><i class="material-icons">comment</i>Comments</div>
@@ -102,15 +102,12 @@
 	</div>
 </div>
 </section>
-
 <script type="text/javascript">
-
 	handler = Gmaps.build('Google');
 	handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
 		markers = handler.addMarkers(<%=raw @map_hash.to_json %>);
 		handler.bounds.extendWith(markers);
 		handler.fitMapToBounds();
 		handler.getMap().setZoom(15);
-
 	});
 </script>
