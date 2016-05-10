@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Food Buddy</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,300italic' rel='stylesheet' type='text/css'>
-
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <%= render 'layouts/navigation' %>
-  <!--<p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>-->
-	<%= yield %>
-  <%= render 'layouts/footer' %>
-</body>
+  <head>
+    <title>Food Buddy</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,300italic' rel='stylesheet' type='text/css'>
+    <%= javascript_include_tag 'http://maps.google.com/maps/api/js?v=3.18&sensor=false&client=&key=&libraries=geometry&language=&hl=&region=' %>
+    <%= javascript_include_tag 'http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' %>
+    <%= javascript_include_tag 'http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.9/src/infobox_packed.js' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render 'layouts/navigation' %>
+    <!--<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>-->
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+  </body>
 </html>

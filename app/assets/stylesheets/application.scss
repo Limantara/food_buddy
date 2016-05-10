@@ -300,3 +300,16 @@ h2:after {
 }
 
 
+/* ========== MAP ========== */
+
+
+.map-container {
+    width: 100%;
+}
+
+.map {
+    width: 100%;
+    height: 400px;
+    z-index: 99999;
+}
+
