@@ -4,7 +4,7 @@
     <%= form_tag("/restaurants", method: "get") do %>
     <div class="input-field col s12 m6">
       <%= label_tag 'search', 'Find' %>
-      <%= text_field_tag 'search', nil, :required => true, placeholder: 'Search by restaurant, food, drinks...', class: 'validate' %>
+      <%= text_field_tag 'search', params[:search], :required => true, placeholder: 'Search by restaurant, food, drinks...', class: 'validate' %>
     </div>
     
     <div class="input-field col s12 m6">

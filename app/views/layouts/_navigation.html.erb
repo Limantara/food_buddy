@@ -9,6 +9,7 @@
       <% if user_signed_in? %>
       <!-- Dropdown Trigger -->
       <li><%= link_to 'HOME', root_path, :method => :get %></li>
+      <li><%= link_to 'Search', restaurants_path, :method => :get %></li>
       <li><a href="#">MESSAGES</a></li>
       <li><a class="dropdown-button" href="#" data-activates="dropdown1"><%= current_user.firstname %><i class="material-icons right">arrow_drop_down</i></a></li>
       <!-- Dropdown Structure -->
