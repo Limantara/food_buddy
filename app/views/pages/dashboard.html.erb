@@ -25,10 +25,10 @@
 						</div>
 						
 						<p>Meet @ <%= event.time %></p>
+						<p>Host: <%= link_to event.user.firstname+ " " +event.user.lastname, user_path(event.user) if event.user %></p>
 						
 						<div class="event-user">
 							<div class="user-info">
-								<%= link_to event.user.firstname+ " " +event.user.lastname, user_path(event.user) if event.user %>
 							</div>
 							<div class="join-link">
 								<% if current_user != event.user && GuestList.exists?(event_id: event.id, user_id: current_user.id) == false %>
@@ -45,15 +45,15 @@
 							<i class="material-icons right">close</i>
 						</span>
 						<p><%= event.restaurant.address.html_safe %></p>
+						<br>
 						<hr>
+						<br>
 						<div class="row valign-wrapper">
-							<div class="col s2">
-								<img src="http://materializecss.com/images/yuna.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+							<div class="col s4">
+								<%= image_tag(event.user.picture.url, class: "responsive-img circle profile-picture-small") %>
 							</div>
-							<div class="col s10">
-								<span class="black-text">
-									<%= event.message %>
-								</span>
+							<div class="col s8">
+								<p class="black-text"><%= event.message %></p>
 							</div>
 						</div>
 					</div>
