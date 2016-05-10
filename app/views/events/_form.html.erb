@@ -29,12 +29,13 @@
     
     <div class="input-field col s12 m8 offset-m2">
       <%= f.label :time %><br>
-      <%= f.text_field :time, class: 'datepicker' %>  
+      <%= f.text_field :time, class: 'timepicker' %>  
       <script type="text/javascript">
-        $('.datepicker').pickadate({
-          selectMonths: true, // Creates a dropdown to control month
-          selectYears: 15 // Creates a dropdown of 15 years to control year
-        });
+        // $('.datepicker').pickadate({
+        //   selectMonths: true, // Creates a dropdown to control month
+        //   selectYears: 15 // Creates a dropdown of 15 years to control year
+        // });
+        $('.timepicker').pickatime();
       </script>
     </div>
     <div class="input-field col s12 m8 offset-m2">
