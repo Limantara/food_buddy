@@ -69,7 +69,7 @@
 						<% @event.guests.each do |guest| %>
 						<div class="chip">
 							<img src="<%= guest.picture %>" alt="Contact Person">
-							<%= guest.firstname + " " + guest.lastname %>
+							<%= link_to guest.firstname + " " + guest.lastname, user_path(guest), :class => 'black-text' %>
 						</div>
 						<% end %>
 					</div>
