@@ -61,7 +61,7 @@
 	<div class="col s12 m8 l9">
 		<ul class="collapsible popout" data-collapsible="accordion">
 			<li>
-				<div class="collapsible-header active"><i class="material-icons">filter_drama</i>Who's Going</div>
+				<div class="collapsible-header active"><i class="material-icons">perm_identity</i>Who's Going</div>
 				<div class="collapsible-body">
 					<br>
 					<div class="row">
@@ -83,7 +83,6 @@
 				<div class="collapsible-header" onclick="displayMap()"><i class="material-icons">place</i>Where</div>
 				<div class="collapsible-body">
 					<p><%= @event.restaurant.address.html_safe %></p>
-					
 
 				</div>
 				<div class="map-container">
@@ -92,8 +91,12 @@
 			</li>
 			<li>
 				<div class="collapsible-header"><i class="material-icons">comment</i>Comments</div>
+				
+				<div class="collapsible-body">
+					
+				</div>
 				<%= render partial: "comments/template", locals: {commentable: @event, new_comment: @comment} %>
-				<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+				</br>
 			</li>
 		</ul>
 	</div>
@@ -102,16 +105,12 @@
 
 <script type="text/javascript">
 
-				handler = Gmaps.build('Google');
-				handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-				markers = handler.addMarkers(<%=raw @map_hash.to_json %>);
+	handler = Gmaps.build('Google');
+	handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+		markers = handler.addMarkers(<%=raw @map_hash.to_json %>);
+		handler.bounds.extendWith(markers);
+		handler.fitMapToBounds();
+		handler.getMap().setZoom(15);
 
-				handler.bounds.extendWith(markers);
-				handler.fitMapToBounds();
-				handler.getMap().setZoom(12);
-
-			});
-
-
-	
+	});
 </script>
